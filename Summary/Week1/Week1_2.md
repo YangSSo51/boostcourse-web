@@ -9,10 +9,10 @@
 - 제목
 
 #### 예시
-- <div> : 영역 표현
-- <ul> : 순서없는 리스트
-- <li> : 각각의 리스트 내용
-- <a> : hyperlink로 연결
+- div : 영역 표현
+- ul : 순서없는 리스트
+- li : 각각의 리스트 내용
+- a : hyperlink로 연결
 
 ```html
 <!DOCTYPE html>
