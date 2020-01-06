@@ -178,3 +178,24 @@ h1.span, div.classname { color : red }
 - 특별한 배치를 위해서는 position absolute 사용
 - 네비게이션같은 엘리먼트는 inline-block으로 변경해서 가로로 배치하기도 함
 - 엘리먼트안의 텍스트 간격,다른 엘리먼트 간의 간격은 padding과 margin속성을 활용해서 위치
+
+# 1-6.float 기반 샘플 화면 레이아웃 구성
+- float를 인식시키는 방법 
+1. 아래에 배치된 코드가 인식하게 하는 경우
+```css 
+   footer{
+      clear:left;
+   }
+```
+2.자식이 float인 경우에는 자식으로 인지를 못해서 높이 값이 0이 되는 경우
+```css
+   #wrap{
+      overflow : auto;
+   }
+```
+
+# 1-7.디버깅-HTML-CSS
+- 크롬 개발자도구의 Element panel
+1. CSS Style을 inline 방식으로 빠르게 테스트
+2. 현재 엘리먼트의 값을 임시로 변경
+3. 최종 결정된 CSS 값을 확인
