@@ -7,5 +7,7 @@
   1. web 개발의 이해 [[summary](https://github.com/YangSSo51/boostcourse-web/blob/master/Summary/Week1/Week1_1.md)]
   2. HTML [[summary](https://github.com/YangSSo51/boostcourse-web/blob/master/Summary/Week1/Week1_2.md)]
   3. CSS [[summary](https://github.com/YangSSo51/boostcourse-web/blob/master/Summary/Week1/Week1_3.md)]
-  4. 개발환경 설정
-  5. Servelet 
+  4. 개발환경 설정 [[summary](https://github.com/YangSSo51/boostcourse-web/blob/master/Summary/Week1/Week1_4.md)]
+  5. Servelet [[summary](https://github.com/YangSSo51/boostcourse-web/blob/master/Summary/Week1/Week1_5.md)]
+
+## 2.DB 연결 웹 앱
