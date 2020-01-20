@@ -93,3 +93,101 @@ SELECT concat( empno, '-', deptno) AS '사번-부서번호' FROM employee;  //�
 SELECT distinct deptno FROM employee;  //중복행 제거
 SELECT empno, name, job FROM employee order by name;  //정렬
 ```
+
+### Where
+```sql
+WHERE title = "staff"
+WHERE salary BETWEEN 1000 AND 2000
+WHERE hiredate < '1981-01-01'
+
+SELECT name, job FROM employee WHERE name like '%A%';   //이름이 A로 시작하는 사람, _이면 두번째
+```
+
+### 함수 사용
+```sql
+SELECT UPPER('SEoul'), UCASE('seOUL');
+SELECT LOWER('SEoul'), LCASE('seOUL');
+SELECT SUBSTRING('Happy Day',3,2);
+SELECT LPAD('hi',5,'?'),LPAD('joe',7,'*');   //채워줌
+SELECT LTRIM(' hello '), RTRIM(' hello ');   //공백제거
+SELECT TRIM(' hi '),TRIM(BOTH 'x' FROM 'xxxhixxx');   //공백제거
+SELECT ABS(2), ABS(-2);   //절대값 구함
+SELECT MOD(234,10), 253 % 7, MOD(29,9);   //나머지 구함
+```
+
+### CAST 형변환
+CAST (expression AS type)
+CONVERT (expression,type)
+CONVERT (expr USING transcoding_name)
+![sql](https://user-images.githubusercontent.com/48993188/72698580-232d8c00-3b88-11ea-9e41-661da858bd92.png)
+```sql
+select cast(now() as date);
+select cast(1-2 as unsigned);
+```
+
+### 그룹함수
+```sql
+SELECT AVG(salary) , SUM(salary)
+FROM employee
+WHERE deptno = 30;
+
+SELECT deptno, AVG(salary) , SUM(salary)
+FROM employee
+group by deptno;
+```
+
+### INSERT
+```sql
+INSERT INTO 테이블명(필드1,필드2, ...) VALUES(필드1값, 필드2값, ...);
+INSERT INTO 테이블명 VALUES (필드1값,필드2값, ...); //모든 필드값을 입력해야함
+INSERT INTO ROLE (role_id, description) values ( 200, 'CEO');
+```
+
+### UPDATE
+```sql
+UPDATE 테이블명 SET 필드1 = 필드값,필드2 = 필드값 , ... WHERE 조건식
+UPDATE ROLE SET description = 'CTO' WHERE role_id = 200;
+```
+
+### DELETE
+```sql
+DELETE FROM 테이블명 WHERE 조건식
+DELETE FROM ROLE WHERE role_id = 200;
+```
+
+# 8-3. DDL (데이터 정의어)
+![데이터타입1](https://user-images.githubusercontent.com/48993188/72702667-df8e4e80-3b96-11ea-8586-edef9087a7c5.png)
+![데이터타입2](https://user-images.githubusercontent.com/48993188/72702694-f46ae200-3b96-11ea-9f23-71f15f054d7e.png)
+
+### 테이블 생성
+```sql
+CREATE TABLE 테이블명(
+  필드명1 타입[NULL | NOT NULL][DEFAULT][AUTO_INCREMENT],
+  필드명2 타입[NULL | NOT NULL][DEFAULT][AUTO_INCREMENT],
+  필드명3 타입[NULL | NOT NULL][DEFAULT][AUTO_INCREMENT],
+  ...
+  PRIMARY KEY(필드명)
+  );
+CREATE TABLE EMPLOYEE2(   
+  empno      INTEGER NOT NULL PRIMARY KEY,  
+  name       VARCHAR(10),   
+  job        VARCHAR(9),   
+  boss       INTEGER,   
+  hiredate   VARCHAR(12),   
+  salary     DECIMAL(7, 2),   
+  comm       DECIMAL(7, 2),   
+  deptno     INTEGER
+  );
+  ```
+### 테이블 수정(추가/삭제)
+```sql
+alter table 테이블명
+      add 필드명 타입 [NULL | NOT NULL][DEFAULT][AUTO_INCREMENT];
+alter table 테이블명
+      drop 필드명;
+alter table 테이블명
+      change 필드명 타입 [NULL | NOT NULL][DEFAULT][AUTO_INCREMENT];
+alter table 테이블명 rename 변경할 이름;
+drop table 테이블명;
+```
+ 
